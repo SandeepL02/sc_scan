@@ -1,13 +1,27 @@
-class Cipher:
-    def __init__(self, algorithm, mode):
-        self.algorithm = algorithm
-        self.mode = mode
+# This file is dual licensed under the terms of the Apache License, Version
+# 2.0, and the BSD License. See the LICENSE file in the root of this repository
+# for complete details.
 
-    class _Encryptor:
-        def update(self, data):
-            return data
-        def finalize(self):
-            return b''
+from __future__ import annotations
 
-    def encryptor(self):
-        return self._Encryptor()
+from cryptography.hazmat.primitives._cipheralgorithm import (
+    BlockCipherAlgorithm,
+    CipherAlgorithm,
+)
+from cryptography.hazmat.primitives.ciphers.base import (
+    AEADCipherContext,
+    AEADDecryptionContext,
+    AEADEncryptionContext,
+    Cipher,
+    CipherContext,
+)
+
+__all__ = [
+    "AEADCipherContext",
+    "AEADDecryptionContext",
+    "AEADEncryptionContext",
+    "BlockCipherAlgorithm",
+    "Cipher",
+    "CipherAlgorithm",
+    "CipherContext",
+]

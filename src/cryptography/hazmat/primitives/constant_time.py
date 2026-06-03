@@ -1,0 +1,2 @@
+def bytes_eq(a: bytes, b: bytes) -> bool:
+    return a == b
